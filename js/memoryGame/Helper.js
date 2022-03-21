@@ -8,6 +8,9 @@ const createCard = (number, src) => {
 
   const image = document.createElement("img");
   image.classList.add("container__game__box__image");
+  image.setAttribute("alt", "card image");
+  image.setAttribute("width", "100px");
+  image.setAttribute("height", "100px");
   image.src = src;
   div.appendChild(image);
   return div;
