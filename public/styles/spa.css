@@ -8,6 +8,8 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
 .padding {
   height: 10px;
 }
@@ -33,7 +35,9 @@ html {
   top: 1%;
 }
 .mobileNav {
+  display:none;
   position: fixed;
+  z-index:5;
   top: 0;
   left: 0;
   height: 100vh;
@@ -72,7 +76,7 @@ html {
 .mobileNav__list__item__link {
   text-decoration: none;
   color: #009e9e;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .mobileNav__list__item + .mobileNav__list__item {
@@ -82,6 +86,7 @@ html {
 .nav {
   position: -webkit-sticky;
   position: sticky;
+  z-index:1;
   top: 0px;
   display: flex;
   align-items: center;
@@ -89,6 +94,7 @@ html {
   background-color: white;
   box-shadow: 0 4px 2px -2px #e1e1e1;
   padding-left: 1rem;
+
 }
 
 .nav__list {
@@ -96,6 +102,9 @@ html {
   align-items: center;
   display: flex;
   flex-direction: row;
+  max-width:1600px;
+  width:100%;
+  margin: 0 auto;
 }
 
 .nav__list__item {
@@ -126,12 +135,15 @@ html {
   color: #008e8e;
 }
 
-.content-container {
-  margin: 1rem 1rem;
+.content__container{
+  max-width:1600px;
+  width:100%;
+  margin:0 auto;
 }
 
+
 #start {
-  margin-bottom: 10rem;
+  margin-bottom:10rem;
 }
 
 .start__item {
@@ -144,17 +156,18 @@ html {
 }
 
 .start__item__description__heading--primary {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 1.2vw + 1.2rem, 3.5rem);
 }
 
 .start__item__description__heading--secondary {
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 2rem);
   color: rgba(0, 0, 0, 0.7);
 }
 
 .start__item__description__paragraph {
   margin-top: 0.7rem;
+  font-size:clamp(0.5rem, .6vw + .6rem, 1rem);
   color: #a1a1a1;
 }
 
@@ -163,7 +176,7 @@ html {
   background-color: #009e9e;
   border-radius: 0.15rem;
   border-color: transparent;
-  padding: 10px 20px;
+  padding: 0.65rem 1.4rem;
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -188,8 +201,34 @@ html {
   width: 100%;
 }
 
+.photo{
+  position:relative;
+  height:50vh;
+  width:100%
+  
+}
+
+.photo__title{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  font-size:clamp(2.5rem, 4vw + 1rem, 7rem);
+  font-weight:bold;
+  color:white;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.photo__img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+
+}
+
 #about {
-  margin-top: 3rem;
+  margin-top:10rem;
 }
 
 .about__list__item__photo {
@@ -205,8 +244,13 @@ html {
   grid-template-rows: repeat(1, 1fr);
 }
 
+.about__list__item__heading{
+  font-size:clamp(0.8rem, 0.8vw + 0.8rem, 2rem)
+}
+
 .about__list__item__text {
   margin-top: 0.8rem;
+  font-size:clamp(0.5rem, .6vw + .6rem, 1rem);
   color: #a1a1a1;
 }
 
@@ -217,6 +261,16 @@ html {
   .start__item__description {
     margin-right: 1rem;
   }
+}
+
+@media(max-width:1620px){
+  
+#start {
+  margin:0 1rem 10rem;
+}
+#about {
+  margin:3rem 1rem 10rem;
+}
 }
 
 @media (max-width: 1023px) {
@@ -241,6 +295,10 @@ html {
 
   .nav {
     display: none;
+  }
+
+  .mobileNav{
+    display:block;
   }
 
   #start {

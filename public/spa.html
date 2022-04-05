@@ -23,6 +23,7 @@
         <i class="fa-solid fa-bars"></i>
       </div>
       <nav class="mobileNav">
+        <ul class="mobileNav__list">
         <li class="mobileNav__list__item mobileNav__list__item--brand">
           <h1>NAZWA</h1>
         </li>
@@ -33,6 +34,7 @@
         <li class="mobileNav__list__item">
           <a href="#about" class="mobileNav__list__item__link">O nas</a>
         </li>
+      </ul>
       </nav>
       <nav class="nav">
         <ul class="nav__list">
@@ -47,7 +49,7 @@
           </li>
         </ul>
       </nav>
-      <div class="content-container">
+      <div class="content__container">
         <section id="start">
           <div class="start__item">
             <div class="start__item__description">
@@ -77,6 +79,16 @@
               />
             </div>
           </div>
+        </section>
+        <section id="photo" class="photo">
+          <h1 class="photo__title">TITLE</h1>
+          <img 
+          src="../assets/main1920w.jpg" 
+          alt="nature" 
+          class="photo__img"
+          srcset="../assets/main1920w.jpg 1920w, ../assets/main1920w.jpg 1366w"
+          sizes="100vw"
+          >
         </section>
         <section id="about">
           <div class="about__list">
